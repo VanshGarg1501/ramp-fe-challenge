@@ -149,7 +149,11 @@ hr.RampBreak--l {
   background-color: var(--color-constructive);
 }
 
-.RampInputCheckbox--input {
+.RampInputCheckbox--input:before {
+  display: none;
+}
+
+.RampInputCheckbox--input:after {
   display: none;
 }
 
