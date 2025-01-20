@@ -62,10 +62,6 @@ export function InputSelect<TItem>({
                 setDropdownPosition(getDropdownPosition(event.target))
                 toggleProps.onClick(event)
               }}
-              // onScroll={(event) => {
-              //   toggleProps.onClick(event)
-              //   toggleProps.onClick(event)
-              // }}
             >
               {inputValue}
             </div>
