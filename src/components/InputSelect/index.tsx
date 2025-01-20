@@ -62,7 +62,10 @@ export function InputSelect<TItem>({
                 setDropdownPosition(getDropdownPosition(event.target))
                 toggleProps.onClick(event)
               }}
-              onScroll={(event) => setDropdownPosition(getDropdownPosition(event.target))}
+              // onScroll={(event) => {
+              //   toggleProps.onClick(event)
+              //   toggleProps.onClick(event)
+              // }}
             >
               {inputValue}
             </div>
@@ -72,7 +75,10 @@ export function InputSelect<TItem>({
                 "RampInputSelect--dropdown-container-opened": isOpen,
               })}
               {...getMenuProps()}
-              style={{ top: dropdownPosition.top, left: dropdownPosition.left }}
+              style={{
+                top: dropdownPosition.top,
+                left: dropdownPosition.left,
+              }}
             >
               {renderItems()}
             </div>
@@ -121,7 +127,7 @@ export function InputSelect<TItem>({
 const getDropdownPosition: GetDropdownPositionFn = (target) => {
   if (target instanceof Element) {
     const { top, left } = target.getBoundingClientRect()
-    const scrollY = target.scrollTop
+    const { scrollY } = window
     return {
       top: scrollY + top + 49,
       left,
